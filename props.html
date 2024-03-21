@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar React - Props</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    <script type="text/babel">
+        const container = document.getElementById("container");
+        const root = ReactDOM.createRoot(container);
+
+        function Header(props) {
+            const {nama, tempat, umur} = props
+            return (
+                <div> 
+                    <h3>Hallo nama saya {nama}, Saya Tinggal di {tempat}, Umur Saya {umur}</h3>
+                </div>
+            );
+        }
+
+        function Main() {
+            return (
+                <div> 
+                    <Header nama = "Zain" tempat = "Citayam" umur = "20" />
+                    <Header nama = "Fikri" tempat = "Bima" umur = "100" />
+                    <Header nama = "Udin" tempat = "Bogor" umur = "15" />
+                </div>
+            );
+        }
+
+        root.render(<Main />)
+    </script>
+</body>
+</html>

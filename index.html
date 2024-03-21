@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar React</title>
+    <!-- React Script -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel Compiler React -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- Membuat Wadah -->
+    <div id="container"></div>
+
+    <script type="text/babel">
+        // Buat Dom Dengan ID
+        const container = document.getElementById("container");
+
+        // Buat Root React
+        const root = ReactDOM.createRoot(container);
+
+        // Render React
+        root.render(<h2>Hello World!</h2>)
+    </script>
+</body>
+</html>

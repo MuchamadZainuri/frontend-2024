@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const Main = () => {
+const Section = () => {
     return (
         <main>
             <div className="cards">
@@ -19,4 +19,4 @@ const Main = () => {
     );
 }
 
-export default Main;
+export default Section;

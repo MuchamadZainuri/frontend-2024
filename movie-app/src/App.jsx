@@ -1,7 +1,8 @@
-import Navbar from "./components/Navbar.jsx";
-import Header from "./components/Header.jsx";
-import Main from "./components/Main.jsx";
-import Footer from "./components/Footer.jsx";
+import Section from "./components/Section";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+
 import "./App.css"
 
 const App = () => {
@@ -9,7 +10,7 @@ const App = () => {
     <>
       <Navbar />
       <Header />
-      <Main />
+      <Section />
       <Footer />
     </>
   )

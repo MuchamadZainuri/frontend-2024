@@ -10,7 +10,7 @@
 }
 
 .hero__left {
-  margin: 2rem 0.5rem;
+  margin: 2rem 1.5rem;
 }
 
 .hero__title {
@@ -28,6 +28,7 @@
 .hero__description {
   color: #64748b;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 
 .hero__button {
@@ -88,5 +89,9 @@
     margin-left: 1.1rem;
     height: auto;
     border-radius: 25px;
+  }
+
+  .hero__description{
+    text-align: left;
   }
 }

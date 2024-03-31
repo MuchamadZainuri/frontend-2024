@@ -10,57 +10,57 @@
 }
 
 .hero__left {
-  margin-bottom: 1rem;
+  margin: 2rem 0.5rem;
 }
 
 .hero__title {
-  color: #4361ee;
+  color: #DA0037;
   margin-bottom: 1rem;
   font-size: 2.44rem;
 }
 
 .hero__genre {
-  color: #b5179e;
+  color: #3f4855;
   margin-bottom: 1rem;
   font-size: 1.59rem;
 }
 
 .hero__description {
   color: #64748b;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero__button {
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 10px;
-  background-color: #4361ee;
+  background-color: #DA0037;
   color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 .hero__image {
-  max-width: 100%;
+  max-width: 88%;
   height: auto;
   border-radius: 25px;
 }
 
 /* Medium Screen */
 @media (min-width: 768px) {
-  /*
-   * Nothing TODO Here.
-   * We dont change style Hero. 
-   */
+  
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
   .container {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero {
-    margin: 0 1rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -68,10 +68,25 @@
   }
 
   .hero__left {
-    flex-basis: 40%;
+    flex-basis: 45%;
+    padding-left: 1rem;
   }
 
   .hero__right {
-    flex-basis: 60%;
+    flex-basis: 55%;
+    display: flex; 
+    justify-content: center;
+    align-items: right;
+  }
+
+  .hero__button{
+    font-size: 1.1rem;
+    padding: 0.8rem 3rem;
+  }
+
+  .hero__image {
+    margin-left: 1.1rem;
+    height: auto;
+    border-radius: 25px;
   }
 }

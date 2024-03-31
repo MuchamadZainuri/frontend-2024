@@ -1,7 +1,7 @@
 /* Small Screen */
 .container {
-  background-color: #4361ee;
-  padding: 1rem;
+  background-color: #222831;
+  padding: 1rem 2rem;
   color: #fff;
 }
 
@@ -48,8 +48,7 @@
 
 /* Large Screen */
 @media (min-width: 992px) {
-  /* 
-   * Nothing TODO HERE.
-   * We haven't styling Navbar.
-   */
+  .container {
+    padding: 1rem 3.4rem;
+  }
 }

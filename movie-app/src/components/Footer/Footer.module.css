@@ -1,17 +1,13 @@
 /* Small Screen */
 .container {
-  background-color: #4361ee;
+  background-color: #222831;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
 .footer__title {
-  margin-bottom: 1rem;
-}
-
-.footer__author {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Medium Screen */

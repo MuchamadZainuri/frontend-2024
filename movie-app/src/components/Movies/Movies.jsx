@@ -9,74 +9,74 @@ const Movies = () => {
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/736x/82/63/de/8263de5a074409318176c1a340e6b79f.jpg"
+                            src="https://i.pinimg.com/736x/e2/13/d3/e213d385c51bd84ab35b8f11b1e0bfe6.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Riski</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>The Meow Titanic</h3>
+                        <p className={styles.movie__date}>04 Februari 2020</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/10/47/10/104710347d00cdd3716ca6d2db57da43.jpg"
+                            src="https://i.pinimg.com/564x/d8/a2/1b/d8a21b9d28531327570e9b50e0905c77.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Wawan</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>Kitty Potter</h3>
+                        <p className={styles.movie__date}>21 September 2003</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/4e/16/00/4e16005c8d91dc69eb753993e6013299.jpg"
+                            src="https://i.pinimg.com/564x/ca/22/56/ca2256918661d1e640c13653b4b8344e.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Heri</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>Cat Of Steel</h3>
+                        <p className={styles.movie__date}>12 Juni 1990</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/c2/36/74/c236747cd41f8a2605f8d6bfededb9ff.jpg"
+                            src="https://i.pinimg.com/474x/f2/ef/8e/f2ef8ecc6625b80c00ed133c0e9b9f52.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Ucup</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>The Flash Cat</h3>
+                        <p className={styles.movie__date}>27 Mei 2007</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/10/92/d5/1092d59c5ff3bd0a32b0173012a6f4bf.jpg"
+                            src="https://i.pinimg.com/564x/eb/54/f2/eb54f288b4bbc00f54d6df360b2ff312.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Beni</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>The Black Cat</h3>
+                        <p className={styles.movie__date}>08 December 2021</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/736x/5a/ec/22/5aec2220c6ebe1869b059801e2107044.jpg"
+                            src="https://i.pinimg.com/474x/3c/41/cc/3c41ccb3f4d3a78f5464a273f7af8712.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Agus</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>The Cat Rangers</h3>
+                        <p className={styles.movie__date}>25 Oktober 2015</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/29/a3/80/29a38066e324f30de0936c5159f8ca4e.jpg"
+                            src="https://i.pinimg.com/564x/7b/0c/62/7b0c62a3e4374e6e86b2155e4565681d.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Kanjut</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>Cat Wars</h3>
+                        <p className={styles.movie__date}>10 Januari 2012</p>
                     </div>
                     <div className={styles.movie}>
                         <img
                             className={styles.movie__image}
-                            src="https://i.pinimg.com/564x/58/4f/8a/584f8a13c1ff4c9b0b92e48795b229c4.jpg"
+                            src="https://i.pinimg.com/564x/8b/13/44/8b13444f973e37fae6f0e40f528e1836.jpg"
                             alt="Movie Image"
                         />
-                        <h3 className={styles.movie__title}>Asep</h3>
-                        <p className={styles.movie__date}>Date Title</p>
+                        <h3 className={styles.movie__title}>Captain Marvel</h3>
+                        <p className={styles.movie__date}>08 Maret 2005</p>
                     </div>
                 </div>
             </section>

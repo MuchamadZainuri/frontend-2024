@@ -1,18 +1,22 @@
+:root {
+  --dark : #222831 ;
+}
+
 /* Small Screen */
 .container {
-  background-color: #222831;
+  background-color: var(--dark);
   padding: 1rem 2rem;
   color: #fff;
 }
 
 .navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .navbar__brand {
   font-size: 2.4rem;
-  margin-bottom: 1rem;
 }
 
 .navbar__list {
@@ -23,7 +27,30 @@
 
 .navbar__item {
   margin-bottom: 1rem;
+  cursor: pointer;
 }
+
+.container__list {
+  margin-top: 1.2rem;
+  display: none;
+}
+
+.navbar__toggle{
+  font-size: 2rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+
+.list__active {
+  margin-top: 1.2rem;
+  display: flex;
+}
+
+.toggle__active {
+  margin-top: 0.3rem;
+  margin-bottom: auto;
+}
+
 
 /* Medium Screen */
 @media (min-width: 768px) {
@@ -44,11 +71,32 @@
   .navbar__item {
     margin: 0 1rem;
   }
+
+    .navbar__toggle {
+      display: none;
+    }
+
+  .container__list {
+    margin-top: 0;
+    display: flex;
+  }
+  .navbar__group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 }
 
 /* Large Screen */
 @media (min-width: 992px) {
   .container {
-    padding: 1rem 3.4rem;
+    padding: 1.3rem 3.4rem;
+  }
+
+  .navbar__toggle {
+    margin-top: 0;
+    display: none;
   }
 }

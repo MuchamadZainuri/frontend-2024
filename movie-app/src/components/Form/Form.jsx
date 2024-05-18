@@ -3,16 +3,20 @@ import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 const Form = ({ movies, setMovies }) => {
-    const [isErorTitle, setIsErrorTitle] = useState(false);
-    const [isErrorYear, setIsErrorYear] = useState(false);
-    const [isErrorPoster, setIsErrorPoster] = useState(false);
-
     const [formData, setFormData] = useState({
         id: uuidv4(),
         title: '',
         year: '',
         type: 'action',
         poster: '',
+    });
+
+    const { title, year, type, poster } = formData;
+
+    const [errors, setErrors] = useState({
+        title: null,
+        year: null,
+        poster: null,
     });
 
     const handleInput = (e) => { 
@@ -23,27 +27,60 @@ const Form = ({ movies, setMovies }) => {
     }
 
     const validate = () => {
-        if (formData.title === '') {
-            setIsErrorTitle(true);
+        if (title === '') {
+            setErrors({
+                title: 'Judul Wajib Di isi',
+                year: null,
+                poster: null,
+            });
             return false;
-        } else if (formData.year === '') { 
-            setIsErrorTitle(false);
-            setIsErrorYear(true);
+
+        } else if (year === '') {
+            setErrors({
+                title: null,
+                year: 'Tahun Wajib Di isi',
+                poster: null,
+            });
             return false;
-        } else if (formData.poster === '') {
-            setIsErrorYear(false);
-            setIsErrorPoster(true);
+
+        } else if (poster === '') {
+            setErrors({
+                title: null,
+                year: null,
+                poster: 'Poster Wajib Di isi',
+            });
             return false;
-        }
-        else { 
+
+        }else {
+            setErrors({
+                title: null,
+                year: null,
+                poster: null,
+            });
             return true;
         }
     }
 
+    const resetForm = () => {
+        setFormData({
+            id: uuidv4(),
+            title: "",
+            year: "",
+            type: "action",
+            poster: ""
+        })
+    }
+
+    const addMovie = () => {
+        setMovies([...movies, formData]);
+        return true;
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        validate() && setMovies([...movies, formData]);
+        validate() && addMovie() && resetForm();
     }
+
     return (
         <div className={styles.container}>
             <section className={styles.form}>
@@ -60,22 +97,22 @@ const Form = ({ movies, setMovies }) => {
                         <form className={styles.form__list} method="" action='' onSubmit={handleSubmit}>
                             <label className={styles.form__label} htmlFor="title">Title</label>
                             <br />
-                            <input className={styles.form__input} type="text" name='title' value={formData.title} id='title' onChange={handleInput} placeholder="*Eternal Monarch"/>
-                            {isErorTitle && <p className={styles.form__error}>Title Wajib Di isi</p>}
+                            <input className={styles.form__input} type="text" name='title' value={title} id='title' onChange={handleInput} placeholder="*Eternal Monarch"/>
+                            {errors.title && <p className={styles.form__error}>{ errors.title }</p>}
                             <br />
                             <label className={styles.form__label} htmlFor="year">Year</label>
                             <br />
-                            <input className={styles.form__input} type="number" name='year' value={formData.year} id='year' onChange={handleInput} placeholder="*1896" min="1895"/>
-                            {isErrorYear && <p className={styles.form__error}>Tahun Wajib Di isi</p>}
+                            <input className={styles.form__input} type="number" name='year' value={year} id='year' onChange={handleInput} placeholder="*1896" min="1895"/>
+                            {errors.year && <p className={styles.form__error}>{ errors.year }</p>}
                             <br />
                             <label className={styles.form__label} htmlFor="poster">Poster</label>
                             <br />
-                            <input className={styles.form__input} type="text" name='poster' value={formData.poster} id='poster' onChange={handleInput} placeholder='ex:https://picsum.photos/300/450' />
-                            {isErrorPoster && <p className={styles.form__error}>Poster Wajib Di isi</p>}
+                            <input className={styles.form__input} type="text" name='poster' value={poster} id='poster' onChange={handleInput} placeholder='ex:https://picsum.photos/300/450' />
+                            {errors.poster && <p className={styles.form__error}>{errors.poster}</p>}
                             <br />
                             <label className={styles.form__label} htmlFor="type">Type</label>
                             <br />
-                            <select className={styles.form__input} name="type" id="type" onChange={handleInput} value={formData.type}>
+                            <select className={styles.form__input} name="type" id="type" onChange={handleInput} value={type}>
                                 <option value="action">Action</option>
                                 <option value="drama">Drama</option>
                                 <option value="horror">Horror</option>

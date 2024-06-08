@@ -1,13 +1,26 @@
-import styles from './Footer.module.css';
+import styled from 'styled-components';
+import Heading from "../ui/Heading";
+import Paragraph from "../ui/Paragraph";
+    
+const StyledFooter = styled.div`
+    background-color: #222831;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+`;
+
+const StyledHeading = styled(Heading)`
+    margin-bottom: 0.5rem;
+`;
 
 const Footer = () => {
     return (
-        <div className={styles.container}>
-            <footer className={styles.footer}>
-                <h2 className={styles.footer__title}>Movie App</h2>
-                <p className={styles.footer__author}>Created by JayZeec</p>
+        <StyledFooter>
+            <footer>
+                <StyledHeading type="h3">Movie App</StyledHeading>
+                <Paragraph>Created by JayZeec</Paragraph>
             </footer>
-        </div>
+        </StyledFooter>
     );
 }
 

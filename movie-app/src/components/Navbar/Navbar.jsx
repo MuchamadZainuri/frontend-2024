@@ -1,47 +1,99 @@
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import styles from './Navbar.module.css';
 import { FaBars } from "react-icons/fa6";
+import { RiCloseLargeLine } from "react-icons/ri";
+import Heading from "../ui/Heading";
+import { useState } from 'react';
+import {ContainerList, NavbarToggle} from './ContainerList';
+
+const Container = styled.div`
+    background-color: #222831;
+    padding: 1rem 2rem;
+    color: #fff;
+
+    @media (min-width: 992px) {
+        padding: 1.3rem 3.4rem;
+    }
+`;
+
+const StyledNavbar = styled.nav`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+`;
+
+const Brand = styled(Heading)`
+    @media (min-width: 768px) {
+        margin-bottom: 0;
+    }
+`;
+
+const StyledLink = styled(Link)`
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #fff;
+`;
+
+const NavbarGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+
+@media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+
+`;
 
 const Navbar = () => {
-    const handleClick = () => {
-        const navbar = document.querySelector(`.${styles.container__list}`);
-        navbar.classList.toggle(`${styles.list__active}`);
-
-        const toggle = document.querySelector(`.${styles.navbar__toggle}`);
-        toggle.classList.toggle(`${styles.toggle__active}`);
+    const [isOPen, setIsOpen] = useState(false)
+    const handleClick = () => { 
+        setIsOpen(!isOPen)
     }
+
     return (
-        <div className={styles.container}>
-            <nav className={styles.navbar}  >
-                <div className={styles.navbar__group}>
+        <Container>
+            <StyledNavbar>
+                <NavbarGroup>
                     <div>
-                        <h1 className={styles.navbar__brand}>Movie App</h1>
+                        <Brand type="h2">Movie App</Brand>
                     </div>
-                    <div className={styles.container__list}>
-                        <ul className={styles.navbar__list}>
-                            <li className={styles.navbar__item}>
-                                <Link className={styles.navbar__link} to="/"> Home </Link>
+                    <ContainerList isOPen={isOPen}>
+                        <ul>
+                            <li>
+                                <StyledLink to="/"> Home </StyledLink>
                             </li>
-                            <li className={styles.navbar__item}>
-                                <Link className={styles.navbar__link} to="/movie/create">Add Movie</Link>
+                            <li>
+                                <StyledLink to="/movie/create"> Add Movie </StyledLink>
                             </li>
-                            <li className={styles.navbar__item}>
-                                <Link className={styles.navbar__link} to="/movie/popular"> Popular </Link>
+                            <li>
+                                <StyledLink to="/movie/popular"> Popular </StyledLink>
                             </li>
-                            <li className={styles.navbar__item}>
-                                <Link className={styles.navbar__link} to="/movie/now">Now Playing</Link>
+                            <li>
+                                <StyledLink to="/movie/now"> Now Playing </StyledLink>
                             </li>
-                            <li className={styles.navbar__item}>
-                                <Link className={styles.navbar__link} to="/movie/top">Top Rated</Link>
+                            <li>
+                                <StyledLink to="/movie/top"> Top Rated </StyledLink>
                             </li>
                         </ul>
-                    </div>
-                </div>
-                <div className={styles.navbar__toggle} onClick={handleClick}>
-                    <FaBars />
-                </div>
-            </nav>
-        </div>
+                    </ContainerList>
+                </NavbarGroup>
+                <NavbarToggle onClick={handleClick} isOPen={isOPen}>
+                    {isOPen ? <RiCloseLargeLine/> : <FaBars />}
+                </NavbarToggle>
+            </StyledNavbar>
+        </Container>
     )
 }
 

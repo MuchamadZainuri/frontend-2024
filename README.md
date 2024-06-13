@@ -1,1 +1,1 @@
-	Styled Components
+	Consuming API

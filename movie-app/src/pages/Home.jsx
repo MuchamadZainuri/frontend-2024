@@ -11,7 +11,7 @@ const Home = () => {
         <>
             {/* <Counter /> */}
             <Hero />
-            <Movies movies={movies} />
+            <Movies movies={movies} title="Latest Movies"/>
             <Form movies={movies} setMovies={setMovies} />
         </>
     );

@@ -56,11 +56,13 @@ const StyledImage = styled(Image)`
 `;
 
 const Movie = ({ movie }) => {
+    const tmdbImage = `https://image.tmdb.org/t/p/w300/${movie.poster_path}`;
+    const year = movie.year || movie.release_date.split("-")[0];
     return (
         <StyledMovie>
-            <StyledImage src={movie.poster} alt={movie.title} />
+            <StyledImage src={movie.poster || tmdbImage } alt={movie.title} />
                 <StyledHeading type="h4">{movie.title}</StyledHeading>
-                <StyledParagraph>{movie.year}</StyledParagraph>
+                <StyledParagraph>{year}</StyledParagraph>
         </StyledMovie>
     );
 }

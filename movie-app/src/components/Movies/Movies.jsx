@@ -45,11 +45,11 @@ const Title = styled(Heading)`
     }
 `;
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, title }) => {
     return (
         <StyledMovies>
             <section>
-                <Title type="h2">Latest Movies</Title>
+                <Title type="h2">{title}</Title>
                     <div>
                         {movies.map((movie) => (
                             <Movie key={movie.id} movie={movie} />

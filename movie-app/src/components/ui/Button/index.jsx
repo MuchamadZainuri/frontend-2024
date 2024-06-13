@@ -13,6 +13,7 @@ const index = styled.button`
         width: 100%;
         display: block;
     `}
+    text-decoration:none;
 `;
 
 export default index;

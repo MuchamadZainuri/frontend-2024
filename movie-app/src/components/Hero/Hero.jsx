@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import Paragraph from "../ui/Paragraph";
 import Image from "../ui/Image";
 import Heading from "../ui/Heading";
+import axios from 'axios';
 
 const Container = styled.div`
     margin: 1rem;
@@ -79,27 +80,50 @@ const StyledParagraph = styled(Paragraph)`
 
 const Hero = () => {
     const [movie, setMovie] = useState("");
-
-    const fetchMovie = async () => {
-        const url = "https://www.omdbapi.com/?apikey=fcf50ae6&i=tt2975590"
-        const response = await fetch(url);
-        const data = await response.json();
-        setMovie(data);
+    const API_KEY = import.meta.env.VITE_API_KEY;
+    const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
+    
+    const fetchTrendingMovies = async () => {
+        const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
+        const data = await axios(URL);
+        const firstMovie = data.data.results[0];
+        return firstMovie;
     };
 
-    useEffect(() => fetchMovie, []);
+    useEffect(() => fetchTrendingMovies, []);
+
+    const fetchDetailMovie = async () => {
+        const trendingMovie = await fetchTrendingMovies();
+        const id = trendingMovie.id;
+
+        const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
+        const data = await axios(URL);
+
+        setMovie(data.data);
+    };
+
+    useEffect(() => fetchDetailMovie, []);
 
     return (
         <Container>
             <HeroSection>
                 <HeroLeft>
-                    <Heading2 type="h2">{movie.Title}</Heading2>
-                    <Heading3 type="h3">{movie.Genre}</Heading3>
-                    <StyledParagraph>{movie.Plot}</StyledParagraph>
-                    <Button variant="primary" size="lg">Watch</Button>
+                    <Heading2 type="h2">{movie.title}</Heading2>
+                    <Heading3 type="h3">{genres}</Heading3>
+                    <StyledParagraph>{movie.overview}</StyledParagraph>
+                    <Button
+                        as="a"
+                        href={`https://youtu.be/9a7C7Bxsm90`}
+                        target="_blank"
+                        variant="primary"
+                        size="lg"
+                    >Watch</Button>
                 </HeroLeft>
                 <HeroRight>
-                    <HeroImage src={movie.Poster} alt={movie.Title} />
+                    <HeroImage
+                        src={`http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
+                        alt={movie.title}
+                    />
                 </HeroRight>
             </HeroSection>
         </Container>

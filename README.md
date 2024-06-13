@@ -1,1 +1,1 @@
-	Styled Component
+	Styled Components

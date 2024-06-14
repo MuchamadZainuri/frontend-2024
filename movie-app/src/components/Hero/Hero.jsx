@@ -82,6 +82,7 @@ const Hero = () => {
     const [movie, setMovie] = useState("");
     const API_KEY = import.meta.env.VITE_API_KEY;
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
+    const idTrailer = movie && movie.videos.results[0].key;
     
     const fetchTrendingMovies = async () => {
         const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
@@ -96,9 +97,8 @@ const Hero = () => {
         const trendingMovie = await fetchTrendingMovies();
         const id = trendingMovie.id;
 
-        const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
+        const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
         const data = await axios(URL);
-
         setMovie(data.data);
     };
 
@@ -113,7 +113,7 @@ const Hero = () => {
                     <StyledParagraph>{movie.overview}</StyledParagraph>
                     <Button
                         as="a"
-                        href={`https://youtu.be/9a7C7Bxsm90`}
+                        href={`https://www.youtube.com/watch?v=${idTrailer}`}
                         target="_blank"
                         variant="primary"
                         size="lg"

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Image from "../ui/Image";
 import Paragraph from "../ui/Paragraph";
 import Heading from "../ui/Heading";
+import { Link } from 'react-router-dom';
 
 const StyledMovie = styled.div`
     margin-bottom: 6.5rem;
@@ -60,7 +61,9 @@ const Movie = ({ movie }) => {
     const year = movie.year || movie.release_date.split("-")[0];
     return (
         <StyledMovie>
-            <StyledImage src={movie.poster || tmdbImage } alt={movie.title} />
+            <Link to={`/movie/${movie.id}`}>
+            <StyledImage src={movie.poster || tmdbImage} alt={movie.title} />
+            </Link>
                 <StyledHeading type="h4">{movie.title}</StyledHeading>
                 <StyledParagraph>{year}</StyledParagraph>
         </StyledMovie>

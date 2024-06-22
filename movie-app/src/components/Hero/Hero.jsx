@@ -5,6 +5,7 @@ import Paragraph from "../ui/Paragraph";
 import Image from "../ui/Image";
 import Heading from "../ui/Heading";
 import axios from 'axios';
+import URL from '../../utils/constants/endpoints';
 
 const Container = styled.div`
     margin: 1rem;
@@ -80,14 +81,12 @@ const StyledParagraph = styled(Paragraph)`
 
 const Hero = () => {
     const [movie, setMovie] = useState("");
-    const API_KEY = import.meta.env.VITE_API_KEY;
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
     const idTrailer = movie && movie.videos.results[0].key;
     
     const fetchTrendingMovies = async () => {
-        const URL = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
-        const data = await axios(URL);
-        const firstMovie = data.data.results[0];
+        const response = await axios(URL.LATEST);
+        const firstMovie = response.data.results[0];
         return firstMovie;
     };
 
@@ -96,10 +95,8 @@ const Hero = () => {
     const fetchDetailMovie = async () => {
         const trendingMovie = await fetchTrendingMovies();
         const id = trendingMovie.id;
-
-        const URL = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos`;
-        const data = await axios(URL);
-        setMovie(data.data);
+        const response = await axios(URL.DETAIL_MOVIE(id));
+        setMovie(response.data);
     };
 
     useEffect(() => fetchDetailMovie, []);

@@ -41,6 +41,7 @@ const DetailParagraph = styled(Paragraph)`
 const DetailMovie = ({id}) => {
     const [movie, setMovie] = useState([]);
     const genres = movie && movie.genres?.map((genre) => genre.name).join(", ");
+    const year = movie && movie.release_date?.split("-")[0];
     const idTrailer = movie && movie.videos?.results[0].key;
 
     const fetchDetailMovie = async () => {
@@ -58,7 +59,7 @@ const DetailMovie = ({id}) => {
                 />
             </div>
             <div className="info">
-                <Heading2 type="h2">{movie.title}</Heading2>
+                <Heading2 type="h2">{movie.title + " (" + year + ")"}</Heading2>
                 <Heading3 type="h3">{genres}</Heading3>
                 <DetailParagraph>{movie.overview}</DetailParagraph>
                 <Button

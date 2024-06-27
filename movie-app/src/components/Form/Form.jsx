@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import H2 from "../ui/Heading";
 import Button from "../ui/Button";
 import Image from '../ui/Image';
@@ -128,7 +128,7 @@ const Error = styled.p`
 
 const Form = ({ movies, setMovies }) => {
     const [formData, setFormData] = useState({
-        id: uuidv4(),
+        id: null,
         title: '',
         year: '',
         type: 'action',
@@ -187,7 +187,7 @@ const Form = ({ movies, setMovies }) => {
 
     const resetForm = () => {
         setFormData({
-            id: uuidv4(),
+            id: null,
             title: "",
             year: "",
             type: "action",

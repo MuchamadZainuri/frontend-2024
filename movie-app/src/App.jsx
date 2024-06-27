@@ -9,16 +9,19 @@ import { ThemeProvider } from 'styled-components';
 import theme from './utils/constants/theme';
 import GlobalStyle from './components/GlobalStyle';
 import Detail from './pages/Movie/Detail';
+import { useState } from 'react';
+import data from './utils/constants/data';
 
 const App = () => {
+  const [movies, setMovies] = useState(data)
   return (
     <>
       <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Layout>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/movie/create' element={<AddMovie />} />
+            <Route path='/' element={<Home movies={movies} />} />
+            <Route path='/movie/create' element={<AddMovie movies={movies} setMovies={setMovies} />} />
           <Route path='/movie/popular' element={<Popular />} />
           <Route path='/movie/now' element={<NowPlaying />} />
           <Route path='/movie/top' element={<TopRated />} />

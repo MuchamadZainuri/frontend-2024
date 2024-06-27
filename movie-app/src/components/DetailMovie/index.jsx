@@ -49,7 +49,7 @@ const DetailMovie = ({id}) => {
         setMovie(response.data);
     }
 
-    useEffect(() => fetchDetailMovie);
+    useEffect(() => fetchDetailMovie, [id, movie]);
     return (
         <StyleDetailMovie>
             <div className="poster">

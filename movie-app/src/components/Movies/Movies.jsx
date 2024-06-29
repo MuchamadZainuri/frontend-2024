@@ -3,6 +3,7 @@ import Movie from "../Movie/Movie.jsx";
 import Heading from "../ui/Heading/index.jsx";
 import { useContext } from "react";
 import MoviesContext from "../../context/MoviesContext.jsx";
+import MoviesHomeContext from "../../context/MoviesHomeContext.jsx";
 
 const StyledMovies = styled.div`
   /* Small Screen */
@@ -48,13 +49,14 @@ const Title = styled(Heading)`
 `;
 
 const Movies = ({ title }) => {
-    const {movies} = useContext(MoviesContext);
+    const data = title === "Latest Movies" ? MoviesHomeContext : MoviesContext;
+    const {movies} = useContext(data);
     return (
         <StyledMovies>
             <section>
                 <Title type="h2">{title}</Title>
                     <div>
-                        {movies.map((movie) => (
+                        {movies?.map((movie) => (
                             <Movie key={movie.id} movie={movie} />
                         ))}
                     </div>

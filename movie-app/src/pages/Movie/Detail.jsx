@@ -8,8 +8,6 @@ import MoviesContext from '../../context/MoviesContext';
 
 const Detail = () => {
     const { id } = useParams();
-    // const [movies, setMovies] = useState([]);
-
     const { setMovies } = useContext(MoviesContext);
 
     const fetchRecommendations = async () => {

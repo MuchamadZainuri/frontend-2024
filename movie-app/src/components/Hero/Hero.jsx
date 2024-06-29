@@ -90,8 +90,6 @@ const Hero = () => {
         return firstMovie;
     };
 
-    useEffect(() => fetchTrendingMovies, []);
-
     const fetchDetailMovie = async () => {
         const trendingMovie = await fetchTrendingMovies();
         const id = trendingMovie.id;
@@ -99,7 +97,9 @@ const Hero = () => {
         setMovie(response.data);
     };
 
-    useEffect(() => fetchDetailMovie);
+    useEffect(() => {
+        fetchTrendingMovies() && fetchDetailMovie();
+    }, [movie]);
     
     return (
         <Container>

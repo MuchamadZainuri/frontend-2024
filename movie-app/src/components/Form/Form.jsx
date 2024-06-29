@@ -9,7 +9,7 @@ import Label from '../ui/Label';
 import StyledForm from '../ui/Form';
 import { Dropdown, Option } from '../ui/Dropdown';
 import { useNavigate } from 'react-router-dom';
-import MoviesContext from '../../context/MoviesContext';
+import MoviesHomeContext from '../../context/MoviesHomeContext';
 
 const Container = styled.div`
     margin: 1rem;
@@ -129,9 +129,7 @@ const Error = styled.p`
 `;
 
 const Form = () => {
-    const { movies, setMovies } = useContext(MoviesContext);
-    
-    movies.length == 20 ? window.location.reload() : null; 
+    const { movies, setMovies } = useContext(MoviesHomeContext);
 
     const [formData, setFormData] = useState({
         id: uuidv4(),

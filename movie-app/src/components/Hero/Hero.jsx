@@ -80,7 +80,7 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const Hero = () => {
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState("");
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
     const idTrailer = movie && movie.videos.results[0].key;
     
@@ -99,8 +99,8 @@ const Hero = () => {
         setMovie(response.data);
     };
 
-    useEffect(() => fetchDetailMovie, []);
-
+    useEffect(() => fetchDetailMovie);
+    
     return (
         <Container>
             <HeroSection>
@@ -112,7 +112,7 @@ const Hero = () => {
                         as="a"
                         href={`https://www.youtube.com/watch?v=${idTrailer}`}
                         target="_blank"
-                        variant="primary"
+                        $variant="primary"
                         size="lg"
                     >Watch</Button>
                 </HeroLeft>

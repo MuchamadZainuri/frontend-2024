@@ -250,7 +250,7 @@ const Form = () => {
                                 <Option value="animation">Animation</Option>
                             </StyledDropdown>
                             <br />
-                            <ButtonSubmit type="submit" name='submit' value="submit" variant="primary" size="lg" full="true">Submit</ButtonSubmit>
+                            <ButtonSubmit type="submit" name='submit' value="submit" $variant="primary" size="lg" $full="true">Submit</ButtonSubmit>
                         </StyledForm>
                     </FormContainer>
                 </FormRight>

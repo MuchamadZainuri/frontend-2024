@@ -66,7 +66,7 @@ const DetailMovie = ({id}) => {
                     as="a"
                     href={`https://www.youtube.com/watch?v=${idTrailer}`}
                     target="_blank"
-                    variant="primary"
+                    $variant="primary"
                     size="lg"
                 >Watch</Button>
             </div>

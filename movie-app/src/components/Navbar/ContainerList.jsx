@@ -4,7 +4,7 @@ const ContainerList = styled.div`
     margin-top: 1.2rem;
     display: none;
 
-    ${({ isopen }) => isopen == "true" && css`
+    ${({ $isopen }) => $isopen == "true" && css`
         margin-top: 1.2rem;
         display: flex;
     `}
@@ -49,7 +49,7 @@ const NavbarToggle = styled.div`
         display: none;
     }
 
-    ${({ isopen }) => isopen == "true" && css`
+    ${({ $isopen }) => $isopen == "true" && css`
         margin-top: 0.3rem;
         margin-bottom: auto;
     `}

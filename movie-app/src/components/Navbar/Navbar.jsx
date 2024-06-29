@@ -69,7 +69,7 @@ const Navbar = () => {
                     <div>
                         <Brand type="h2">Movie App</Brand>
                     </div>
-                    <ContainerList isopen={isOpen.toString()}>
+                    <ContainerList $isopen={isOpen.toString()}>
                         <ul>
                             <li>
                                 <StyledLink to="/"> Home </StyledLink>
@@ -89,7 +89,7 @@ const Navbar = () => {
                         </ul>
                     </ContainerList>
                 </NavbarGroup>
-                <NavbarToggle onClick={handleClick} isopen={isOpen.toString()}>
+                <NavbarToggle onClick={handleClick} $isopen={isOpen.toString()}>
                     {isOpen ? <RiCloseLargeLine/> : <FaBars />}
                 </NavbarToggle>
             </StyledNavbar>

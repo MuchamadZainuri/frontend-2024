@@ -5,11 +5,11 @@ const index = styled.button`
     border: none;
     border-radius: 10px;
     color: white;
-    background-color: ${({ variant, theme }) => theme.colors[variant] || theme.colors["primary"]};
+    background-color: ${({ $variant, theme }) => theme.colors[$variant] || theme.colors["primary"]};
     font-size: ${({ size, theme }) => theme.fontSize[size] || theme.fontSize["md"]};
     padding: ${({ padding, theme }) => theme.padding[padding] || theme.padding["md"]};
     cursor: pointer;
-    ${({ full }) => full == "true" && css`
+    ${({ $full }) => $full == "true" && css`
         width: 100%;
         display: block;
     `}

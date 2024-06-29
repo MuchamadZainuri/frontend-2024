@@ -130,6 +130,8 @@ const Error = styled.p`
 
 const Form = () => {
     const { movies, setMovies } = useContext(MoviesContext);
+    
+    movies.length >= 20 ? window.location.reload() : null; 
 
     const [formData, setFormData] = useState({
         id: uuidv4(),

@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import Hero from "../components/Hero/Hero";
 import Movies from "../components/Movies/Movies";
+import MoviesContext from "../context/MoviesContext";
 // import URL from "../utils/constants/endpoints";
 // import Counter from "../components/Counter";
 // import {useEffect} from "react";
@@ -13,6 +15,8 @@ const Home = () => {
     // }
 
     // useEffect(() => fetchUpComing);
+    const { movies } = useContext(MoviesContext);
+    movies.length == 20 ? window.location.reload() : null;
 
     return (
         <>

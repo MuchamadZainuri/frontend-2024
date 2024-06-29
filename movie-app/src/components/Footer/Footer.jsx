@@ -18,7 +18,7 @@ const Footer = () => {
         <StyledFooter>
             <footer>
                 <StyledHeading type="h3">Movie App</StyledHeading>
-                <Paragraph>Created by JayZeec</Paragraph>
+                <Paragraph>Created by zdacoder</Paragraph>
             </footer>
         </StyledFooter>
     );

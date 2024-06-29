@@ -57,9 +57,9 @@ const NavbarGroup = styled.div`
 `;
 
 const Navbar = () => {
-    const [isOPen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     const handleClick = () => { 
-        setIsOpen(!isOPen)
+        setIsOpen(!isOpen)
     }
 
     return (
@@ -69,7 +69,7 @@ const Navbar = () => {
                     <div>
                         <Brand type="h2">Movie App</Brand>
                     </div>
-                    <ContainerList isOPen={isOPen}>
+                    <ContainerList isopen={isOpen.toString()}>
                         <ul>
                             <li>
                                 <StyledLink to="/"> Home </StyledLink>
@@ -89,8 +89,8 @@ const Navbar = () => {
                         </ul>
                     </ContainerList>
                 </NavbarGroup>
-                <NavbarToggle onClick={handleClick} isOPen={isOPen}>
-                    {isOPen ? <RiCloseLargeLine/> : <FaBars />}
+                <NavbarToggle onClick={handleClick} isopen={isOpen.toString()}>
+                    {isOpen ? <RiCloseLargeLine/> : <FaBars />}
                 </NavbarToggle>
             </StyledNavbar>
         </Container>

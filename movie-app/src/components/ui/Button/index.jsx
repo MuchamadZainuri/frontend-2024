@@ -9,7 +9,7 @@ const index = styled.button`
     font-size: ${({ size, theme }) => theme.fontSize[size] || theme.fontSize["md"]};
     padding: ${({ padding, theme }) => theme.padding[padding] || theme.padding["md"]};
     cursor: pointer;
-    ${({ full }) => full && css`
+    ${({ full }) => full == "true" && css`
         width: 100%;
         display: block;
     `}

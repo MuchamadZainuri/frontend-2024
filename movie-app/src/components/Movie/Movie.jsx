@@ -61,7 +61,10 @@ const Movie = ({ movie }) => {
     const year = movie.year || movie.release_date.split("-")[0];
     return (
         <StyledMovie>
-            <Link to={movie.id === null ? `#` : `/movie/${movie.id}`}>
+            <Link to={
+                // jika panjang id > dari 7 maka akan diambil id dari movie.id
+                movie.id.length > 7 ? `#` : `/movie/${movie.id}`
+                }>
             <StyledImage src={movie.poster || tmdbImage} alt={movie.title} />
             </Link>
                 <StyledHeading type="h4">{movie.title}</StyledHeading>

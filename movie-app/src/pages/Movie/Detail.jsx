@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 import Movies from "../../components/Movies/Movies";
 import DetailMovie from '../../components/DetailMovie';
 import URL from "../../utils/constants/endpoints";
+import MoviesContext from '../../context/MoviesContext';
 
 const Detail = () => {
     const { id } = useParams();
-    const [movies, setMovies] = useState([]);
+    // const [movies, setMovies] = useState([]);
+
+    const { setMovies } = useContext(MoviesContext);
 
     const fetchRecommendations = async () => {
         const response = await axios(URL.RECOMMENDATIONS(id));
@@ -19,7 +22,7 @@ const Detail = () => {
     return (
         <>
             <DetailMovie id={id} />
-            <Movies movies={movies} title="Recommendations" />
+            <Movies title="Recommendations" />
         </>
     );
 }

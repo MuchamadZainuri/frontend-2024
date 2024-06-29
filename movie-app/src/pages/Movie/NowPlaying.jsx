@@ -1,11 +1,14 @@
+import { useEffect, useContext } from "react"
 import axios from "axios";
-import { useState, useEffect } from "react"
 import Movies from "../../components/Movies/Movies";
 import Hero from "../../components/Hero/Hero";
 import URL from "../../utils/constants/endpoints";
+import MoviesContext from "../../context/MoviesContext";
 
 function NowPlaying() {
-    const [movies, setMovies] = useState([]);
+    // const [movies, setMovies] = useState([]);
+
+    const { setMovies } = useContext(MoviesContext);
 
     const fetchNowPlaying = async () => {
         const data = await axios(URL.NOW_PLAYING)
@@ -16,7 +19,7 @@ function NowPlaying() {
     return (
         <>
             <Hero />
-            <Movies movies={movies} title="Now Playing" />
+            <Movies title="Now Playing" />
         </>
     )
 }

@@ -6,7 +6,6 @@ import Movies from "../components/Movies/Movies";
 // import axios from "axios";
 
 const Home = () => {
-
     // const fetchUpComing = async () => {
     //     const data = await axios(URL.LATEST)
     //     data.data.results.shift()

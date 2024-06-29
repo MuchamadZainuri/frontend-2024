@@ -6,8 +6,6 @@ import URL from "../../utils/constants/endpoints";
 import MoviesContext from "../../context/MoviesContext";
 
 function TopRated() {
-    // const [movies, setMovies] = useState([]);
-
     const { setMovies } = useContext(MoviesContext);
 
     const fetchTopRatedMovies = async () => { 

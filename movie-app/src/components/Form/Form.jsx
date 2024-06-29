@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 // import { v4 as uuidv4 } from 'uuid';
 import H2 from "../ui/Heading";
 import Button from "../ui/Button";
@@ -9,6 +9,7 @@ import Label from '../ui/Label';
 import StyledForm from '../ui/Form';
 import { Dropdown, Option } from '../ui/Dropdown';
 import { useNavigate } from 'react-router-dom';
+import MoviesContext from '../../context/MoviesContext';
 
 const Container = styled.div`
     margin: 1rem;
@@ -127,7 +128,9 @@ const Error = styled.p`
     font-style: italic;
 `;
 
-const Form = ({ movies, setMovies }) => {
+const Form = () => {
+    const { movies, setMovies } = useContext(MoviesContext);
+
     const [formData, setFormData] = useState({
         id: null,
         title: '',

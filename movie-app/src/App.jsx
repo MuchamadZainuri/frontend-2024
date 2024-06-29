@@ -11,23 +11,32 @@ import GlobalStyle from './components/GlobalStyle';
 import Detail from './pages/Movie/Detail';
 import { useState } from 'react';
 import data from './utils/constants/data';
+import MoviesContext from './context/MoviesContext';
 
 const App = () => {
   const [movies, setMovies] = useState(data)
+
+  const contextValue = {
+    movies,
+    setMovies,
+  }
+
   return (
     <>
       <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Layout>
-        <Routes>
-            <Route path='/' element={<Home movies={movies} />} />
-            <Route path='/movie/create' element={<AddMovie movies={movies} setMovies={setMovies} />} />
-          <Route path='/movie/popular' element={<Popular />} />
-          <Route path='/movie/now' element={<NowPlaying />} />
-          <Route path='/movie/top' element={<TopRated />} />
-          <Route path='/movie/:id' element={<Detail />} />
-        </Routes>
-        </Layout>
+        <GlobalStyle />
+        <MoviesContext.Provider value={contextValue}>
+          <Layout>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/movie/create' element={<AddMovie />} />
+              <Route path='/movie/popular' element={<Popular />} />
+              <Route path='/movie/now' element={<NowPlaying />} />
+              <Route path='/movie/top' element={<TopRated />} />
+              <Route path='/movie/:id' element={<Detail />} />
+            </Routes>
+          </Layout>
+        </MoviesContext.Provider>
       </ThemeProvider>
     </>
   )

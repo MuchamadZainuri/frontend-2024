@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Movie from "../Movie/Movie.jsx";
 import Heading from "../ui/Heading/index.jsx";
+import { useContext } from "react";
+import MoviesContext from "../../context/MoviesContext.jsx";
 
 const StyledMovies = styled.div`
   /* Small Screen */
@@ -45,7 +47,8 @@ const Title = styled(Heading)`
     }
 `;
 
-const Movies = ({ movies, title }) => {
+const Movies = ({ title }) => {
+    const {movies} = useContext(MoviesContext);
     return (
         <StyledMovies>
             <section>

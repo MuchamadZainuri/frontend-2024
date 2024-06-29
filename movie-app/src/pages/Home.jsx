@@ -5,7 +5,7 @@ import Movies from "../components/Movies/Movies";
 // import {useEffect} from "react";
 // import axios from "axios";
 
-const Home = ({movies}) => {
+const Home = () => {
 
     // const fetchUpComing = async () => {
     //     const data = await axios(URL.LATEST)
@@ -19,7 +19,7 @@ const Home = ({movies}) => {
         <>
             {/* <Counter /> */}
             <Hero />
-            <Movies movies={movies} title="Latest Movies"/>
+            <Movies title="Latest Movies"/>
         </>
     );
 }

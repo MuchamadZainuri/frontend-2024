@@ -7,11 +7,12 @@ import TopRated from './pages/Movie/TopRated';
 import Layout from './Layout';
 import { ThemeProvider } from 'styled-components';
 import theme from './utils/constants/theme';
-import GlobalStyle from './components/GlobalStyle';
+// import GlobalStyle from './components/GlobalStyle';
 import Detail from './pages/Movie/Detail';
 import { useState } from 'react';
 import data from './utils/constants/data';
 import MoviesContext from './context/MoviesContext';
+import './App.css';
 
 const App = () => {
   const [movies, setMovies] = useState(data)
@@ -24,7 +25,7 @@ const App = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
+        {/* <GlobalStyle /> */}
         <MoviesContext.Provider value={contextValue}>
           <Layout>
             <Routes>

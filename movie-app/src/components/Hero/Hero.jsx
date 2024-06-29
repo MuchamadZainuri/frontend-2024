@@ -80,7 +80,7 @@ const StyledParagraph = styled(Paragraph)`
 `;
 
 const Hero = () => {
-    const [movie, setMovie] = useState("");
+    const [movie, setMovie] = useState([]);
     const genres = movie && movie.genres.map((genre) => genre.name).join(", ");
     const idTrailer = movie && movie.videos.results[0].key;
     

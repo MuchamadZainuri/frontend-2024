@@ -8,6 +8,7 @@ import Input from '../ui/Input';
 import Label from '../ui/Label';
 import StyledForm from '../ui/Form';
 import { Dropdown, Option } from '../ui/Dropdown';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
     margin: 1rem;
@@ -135,6 +136,8 @@ const Form = ({ movies, setMovies }) => {
         poster: '',
     });
 
+    const navigation = useNavigate();
+
     const { title, year, type, poster } = formData;
 
     const [errors, setErrors] = useState({
@@ -193,6 +196,7 @@ const Form = ({ movies, setMovies }) => {
             type: "action",
             poster: ""
         })
+        navigation('/');
     }
 
     const addMovie = () => {

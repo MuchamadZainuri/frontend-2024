@@ -4,4 +4,4 @@ NIM : 0110222091 <br>
 Class : SE02
 
 ## Live Demo Website : 
-[MovieAPP](https://movie-app-zdacoder.vercel.app/)
+[https://movie-app-zdacoder.vercel.app/](https://movie-app-zdacoder.vercel.app/)
